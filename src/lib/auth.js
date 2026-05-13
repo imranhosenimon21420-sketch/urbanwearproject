@@ -3,12 +3,11 @@ import jwt from "jsonwebtoken";
 
 const SALT_ROUNDS = 12;
 
+const JWT_SECRET = "urbanwear-local-dev-replace-with-a-long-random-secret";
+const JWT_EXPIRES_IN = "7d";
+
 function getJwtSecret() {
-  const secret = process.env.JWT_SECRET;
-  if (!secret) {
-    throw new Error("Define JWT_SECRET in .env.local");
-  }
-  return secret;
+  return JWT_SECRET;
 }
 
 export async function hashPassword(plain) {
@@ -23,7 +22,7 @@ export async function verifyPassword(plain, hash) {
  * @param {{ sub: string; email: string; role: "user" | "admin" }} payload
  */
 export function signAccessToken(payload) {
-  const expiresIn = process.env.JWT_EXPIRES_IN || "7d";
+  const expiresIn = JWT_EXPIRES_IN;
   return jwt.sign(payload, getJwtSecret(), { expiresIn });
 }
 

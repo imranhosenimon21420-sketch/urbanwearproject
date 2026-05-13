@@ -64,8 +64,8 @@ function AdminLoginForm() {
       <div className={styles.card}>
         <h1 className={styles.title}>Administrator sign-in</h1>
         <p className={styles.lead}>
-          Sign in with an existing admin account. New admins can also be created via{" "}
-          <code className={styles.code}>ADMIN_EMAILS</code> at registration.
+          Sign in with an existing admin account. New admins can also be created via the allowlist in{" "}
+          <code className={styles.code}>src/lib/roleForRegister.js</code> at registration.
         </p>
         {bootstrapOpen ? (
           <p className={styles.setupHint}>

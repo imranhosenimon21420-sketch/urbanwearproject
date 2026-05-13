@@ -1,14 +1,10 @@
 import mongoose from "mongoose";
 
+const MONGODB_URI =
+  "mongodb+srv://masumparvezcc_db_user:wMyZRekwfFgY505B@cluster0.yb3v7u1.mongodb.net/urbanwear?retryWrites=true&w=majority&appName=Cluster0";
+
 function getMongoUri() {
-  const raw = process.env.MONGODB_URI;
-  if (!raw) {
-    throw new Error(
-      "Please define the MONGODB_URI environment variable inside .env.local"
-    );
-  }
-  // Trim and strip accidental quotes from editor paste
-  return raw.trim().replace(/^["']|["']$/g, "");
+  return MONGODB_URI.trim().replace(/^["']|["']$/g, "");
 }
 
 /**
@@ -42,7 +38,7 @@ export async function connectDB() {
     if (msg.includes("bad auth") || e?.code === 8000) {
       throw new Error(
         "MongoDB authentication failed (bad auth). In Atlas: Database Access → your user → " +
-          "Edit → reset password → copy the new connection string into .env.local as MONGODB_URI. " +
+          "Edit → reset password → update MONGODB_URI in src/lib/mongodb.js. " +
           "If the password contains @ : / ? # [ ] etc., URL-encode it in the URI (or use Atlas “Connect” which encodes it)."
       );
     }

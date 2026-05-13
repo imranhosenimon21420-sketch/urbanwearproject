@@ -78,31 +78,14 @@ export default function AdminSetupPage() {
     );
   }
 
-  if (status.reason === "not_configured") {
-    return (
-      <div className={loginStyles.page}>
-        <div className={loginStyles.card}>
-          <h1 className={loginStyles.title}>First administrator</h1>
-          <p className={loginStyles.lead}>
-            Add <code className={loginStyles.code}>ADMIN_BOOTSTRAP_SECRET</code> to <code className={loginStyles.code}>.env.local</code>{" "}
-            (any long random string), restart the dev server, then open this page again.
-          </p>
-          <Link href="/admin/login" className={styles.back}>
-            ← Admin sign-in
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
   if (!status.available) {
     return (
       <div className={loginStyles.page}>
         <div className={loginStyles.card}>
           <h1 className={loginStyles.title}>First administrator</h1>
           <p className={loginStyles.lead}>
-            An admin account already exists. Use sign-in, or add further admins via{" "}
-            <code className={loginStyles.code}>ADMIN_EMAILS</code> on registration.
+            An admin account already exists. Use sign-in, or add further admins via the admin email allowlist in{" "}
+            <code className={loginStyles.code}>src/lib/roleForRegister.js</code> on registration.
           </p>
           <Link href="/admin/login" className={styles.back}>
             ← Admin sign-in
@@ -117,9 +100,9 @@ export default function AdminSetupPage() {
       <div className={loginStyles.card}>
         <h1 className={loginStyles.title}>Create first administrator</h1>
         <p className={loginStyles.lead}>
-          One-time setup. Enter the same value you set as <code className={loginStyles.code}>ADMIN_BOOTSTRAP_SECRET</code>{" "}
-          in <code className={loginStyles.code}>.env.local</code>. Remove or change that secret after onboarding if you
-          like.
+          One-time setup. Enter the bootstrap secret defined in{" "}
+          <code className={loginStyles.code}>src/app/api/auth/admin/bootstrap/route.js</code>. Change that value in code
+          after onboarding if you like.
         </p>
         <form className={loginStyles.form} onSubmit={onSubmit}>
           <label className={loginStyles.field}>
