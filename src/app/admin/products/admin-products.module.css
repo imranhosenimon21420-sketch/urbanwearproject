@@ -1,0 +1,161 @@
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.lead {
+  margin: 0;
+  color: var(--uw-muted);
+  line-height: 1.55;
+}
+
+.muted {
+  color: var(--uw-muted);
+}
+
+.error {
+  margin: 0;
+  color: var(--uw-accent);
+  font-weight: 600;
+}
+
+.success {
+  margin: 0;
+  color: var(--uw-mint);
+  font-weight: 600;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--uw-border);
+  border-radius: 1rem;
+  background: var(--uw-surface);
+  box-shadow: var(--uw-shadow-sm);
+}
+
+.rowMain {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.name {
+  font-weight: 800;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: var(--uw-muted);
+}
+
+.slug {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.78rem;
+  color: #7c3aed;
+  word-break: break-all;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--uw-accent-3);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.edit {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--uw-accent-2);
+}
+
+.edit:hover {
+  color: var(--uw-accent);
+}
+
+.empty {
+  border: 2px dashed rgba(8, 145, 178, 0.35);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background: var(--uw-surface-soft);
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.pageBtn {
+  border: none;
+  background: none;
+  font: inherit;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--uw-accent-2);
+  cursor: pointer;
+}
+
+.pageBtn:hover:not(:disabled) {
+  color: var(--uw-accent);
+}
+
+.pageDisabled {
+  opacity: 0.35;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--uw-muted);
+}
+
+.pageInfo {
+  font-size: 0.85rem;
+  color: var(--uw-muted);
+}

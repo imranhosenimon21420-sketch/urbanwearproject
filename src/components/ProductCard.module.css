@@ -1,0 +1,76 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.media {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--uw-border);
+  background: var(--uw-surface);
+  border-radius: 1rem;
+  box-shadow: var(--uw-shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.media:hover {
+  box-shadow: var(--uw-shadow);
+  transform: translateY(-2px);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+  transition: transform 0.35s ease;
+}
+
+.media:hover .image {
+  transform: scale(1.03);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cat {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--uw-accent-3);
+  font-weight: 700;
+}
+
+.title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--uw-text);
+}
+
+.title:hover {
+  color: var(--uw-accent-2);
+}
+
+.prices {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.sale {
+  font-weight: 700;
+  color: var(--uw-accent);
+}
+
+.was {
+  font-size: 0.85rem;
+  text-decoration: line-through;
+  color: var(--uw-muted);
+}

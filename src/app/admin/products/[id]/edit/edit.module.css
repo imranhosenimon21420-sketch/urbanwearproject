@@ -1,0 +1,142 @@
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.back {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--uw-accent-2);
+}
+
+.back:hover {
+  color: var(--uw-accent);
+}
+
+.live {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--uw-accent-3);
+}
+
+.live:hover {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--uw-muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  border: 1px solid var(--uw-border-strong);
+  background: var(--uw-surface);
+  color: var(--uw-text);
+  border-radius: 0.65rem;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.95rem;
+  letter-spacing: normal;
+  text-transform: none;
+  font-family: inherit;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 4rem;
+}
+
+.mono {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.82rem;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid rgba(124, 58, 237, 0.35);
+  outline-offset: 1px;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 520px) {
+  .row2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.error {
+  margin: 0;
+  color: var(--uw-accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.success {
+  margin: 0;
+  color: var(--uw-mint);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.muted {
+  color: var(--uw-muted);
+}
+
+.btn {
+  border: 1px solid transparent;
+  background: linear-gradient(120deg, var(--uw-accent-3), var(--uw-accent-2));
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn:not(:disabled):hover {
+  transform: translateY(-1px);
+}

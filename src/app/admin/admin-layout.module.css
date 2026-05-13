@@ -1,0 +1,61 @@
+.wrap {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--uw-border);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--uw-accent-2);
+}
+
+.brand:hover {
+  color: var(--uw-accent);
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--uw-muted);
+}
+
+.nav a:hover {
+  color: var(--uw-text);
+}
+
+.signOut {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--uw-accent);
+  cursor: pointer;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.signOut:hover {
+  text-decoration: underline;
+}
+
+.body {
+  flex: 1;
+}
